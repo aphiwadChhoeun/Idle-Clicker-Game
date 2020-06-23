@@ -1,7 +1,7 @@
 <template>
   <div class="coin__pocket">
     <div class="coin__image">
-      <img src="../assets/coin.webp" alt="Coin Pocket" />
+      <img src="/images/coin.webp" alt="Coin Pocket" />
     </div>
     <div class="coin__meta">0</div>
   </div>

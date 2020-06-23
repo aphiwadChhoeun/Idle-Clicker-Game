@@ -1,13 +1,21 @@
 <template>
   <div class="scene__layout">
     <div class="allies__container">allies</div>
-    <div class="enemy__container">enemy</div>
+    <div class="enemy__container">
+      <enemy-component />
+    </div>
   </div>
 </template>
 
 <script>
+import EnemyComponent from './EnemyComponent'
+
 export default {
-  name: 'SceneLayout'
+  name: 'SceneLayout',
+
+  components: {
+    EnemyComponent
+  }
 }
 </script>
 
@@ -18,7 +26,7 @@ export default {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding-top: 8rem;
+  padding-top: 4rem;
   display: flex;
   justify-content: center;
 

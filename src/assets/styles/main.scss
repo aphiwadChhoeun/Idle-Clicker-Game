@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import './normalize';
 @import './variables';
 @import './button';
 
 html {
   * {
-    font-family: 'Permanent Marker', cursive;
+    font-family: $mainFont;
     color: $light;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
