@@ -1,8 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-@import "./normalize";
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import './normalize';
+@import './variables';
+@import './button';
 
 html {
   * {
-    font-family: "Permanent Marker", cursive;
+    font-family: 'Permanent Marker', cursive;
+    color: $light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+}
+
+body {
+  background: $dark;
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
 }

@@ -1,0 +1,33 @@
+@import './variables';
+
+.button {
+  padding: 1rem;
+  background: $primary;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 100ms ease-out;
+  border: 4px solid $dark;
+  box-shadow: 0 0 15px $dark;
+  color: $dark;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    filter: brightness(0.8);
+    box-shadow: inset 0 0 15px $dark, 0 0 4px $dark;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &.is-round {
+    $size: 6rem;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+  }
+}
