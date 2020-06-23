@@ -1,7 +1,6 @@
 <template>
   <div class="scene__container container">
-    main game
-
+    <scene-layout />
     <action-panel />
   </div>
 </template>
@@ -16,12 +15,14 @@
 </style>
 
 <script>
+import SceneLayout from './SceneLayout'
 import ActionPanel from './ActionPanel'
 
 export default {
   name: 'MainScene',
 
   components: {
+    SceneLayout,
     ActionPanel
   }
 }
