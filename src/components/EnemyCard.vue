@@ -65,7 +65,7 @@ export default {
         })
       }
 
-      this.spawnTl.restart()
+      return this.spawnTl.restart()
     },
 
     playDieAnimation() {
@@ -105,7 +105,7 @@ export default {
           })
       }
 
-      this.hitTl.restart()
+      return this.hitTl.restart()
     }
   }
 }
