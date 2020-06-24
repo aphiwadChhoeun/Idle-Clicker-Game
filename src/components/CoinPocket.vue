@@ -1,9 +1,9 @@
 <template>
-  <div class="coin__pocket">
+  <div class="coin__pocket box is-light">
     <div class="coin__image" ref="coin">
       <img src="/images/coin.webp" alt="Coin Pocket" />
     </div>
-    <div class="coin__meta">{{ coin }}</div>
+    <div class="box__meta coin__meta">{{ coin }}</div>
   </div>
 </template>
 
@@ -50,14 +50,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/styles/variables';
+
+$boxSize: 180px;
+
 .coin__pocket {
-  padding: 0 0.5rem;
-  width: 7rem;
-  height: 100%;
+  width: $boxSize;
+  height: $boxSize;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: $light;
 
   .coin__image {
     width: 5rem;
@@ -70,7 +74,6 @@ export default {
   }
 
   .coin__meta {
-    text-align: center;
     font-size: 1.5rem;
   }
 }

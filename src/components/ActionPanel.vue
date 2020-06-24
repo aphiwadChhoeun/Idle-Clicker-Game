@@ -1,7 +1,9 @@
 <template>
   <div class="action__container">
     <action-button />
-    <coin-pocket />
+    <div class="action__wrapper">
+      <coin-pocket />
+    </div>
   </div>
 </template>
 
@@ -14,7 +16,15 @@
   bottom: 0;
   width: 100vw;
   height: 20vh;
-  box-shadow: 0 -15px 5px rgba(0, 0, 0, .1);
+  box-shadow: 0 -15px 5px rgba(0, 0, 0, 0.1);
+
+  .action__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 }
 </style>
 

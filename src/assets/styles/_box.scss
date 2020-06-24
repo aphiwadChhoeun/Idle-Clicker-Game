@@ -1,0 +1,25 @@
+@import './variables';
+
+.box {
+  padding: 1rem;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px $dark;
+  margin: 0 1rem;
+
+  &.is-light {
+    background: $light;
+
+    .box__meta {
+      color: $dark;
+    }
+  }
+
+  &.is-dark {
+    background: $dark;
+
+    .box__meta {
+      color: $light;
+    }
+  }
+}

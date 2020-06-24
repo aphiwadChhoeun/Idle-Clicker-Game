@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header__wrapper">
-      <div class="title">Idle Game</div>
+      <div class="title">Idle Clicker Game</div>
     </div>
   </div>
 </template>
@@ -13,6 +13,7 @@
 
   .header__wrapper {
     width: 80vw;
+    padding: 1rem 0;
     margin: 0 auto;
 
     .title {
