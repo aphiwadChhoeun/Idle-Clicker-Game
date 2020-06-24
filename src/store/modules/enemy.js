@@ -1,4 +1,5 @@
 export default {
+  namespaced: true,
   state: () => ({
     name: 'Bad guy',
     hp: 100,

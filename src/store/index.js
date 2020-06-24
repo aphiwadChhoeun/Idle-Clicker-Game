@@ -5,7 +5,7 @@ import EnemyStore from './modules/enemy'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
     stage: 0,
     coin: 0,
@@ -18,10 +18,14 @@ export default new Vuex.Store({
   },
   actions: {
     attack({ commit, state }) {
-      commit('decreaseHp', state.damage)
+      if (state.Enemy.hp > 0) {
+        commit('Enemy/decreaseHp', state.damage)
+      }
     }
   },
   modules: {
-    enemy: EnemyStore
+    Enemy: EnemyStore
   }
 })
+
+export default store

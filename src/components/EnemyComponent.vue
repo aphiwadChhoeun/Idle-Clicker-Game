@@ -1,14 +1,14 @@
 <template>
   <div class="enemy__wrapper">
-    <div class="healthpoint">{{ enemy.hp }}hp</div>
+    <div class="healthpoint">{{ hp }}hp</div>
 
     <div class="enemy__card">
       <div class="enemy__image">
-        <img :src="enemy.image" :alt="enemy.name" />
+        <img :src="image" :alt="name" />
       </div>
 
       <div class="enemy__meta">
-        {{ enemy.name }}
+        {{ name }}
       </div>
     </div>
   </div>
@@ -16,12 +16,28 @@
 
 <script>
 import { mapState } from 'vuex'
+import EnemyPool from '../lib/EnemyPool'
 
 export default {
   name: 'EnemyComponent',
 
   computed: {
-    ...mapState(['enemy'])
+    ...mapState({
+      hp: state => state.Enemy.hp,
+      name: state => state.Enemy.name,
+      image: state => state.Enemy.image,
+
+      stage: state => state.stage
+    })
+  },
+
+  watch: {
+    hp(newHp) {
+      if (newHp <= 0) {
+        this.$store.commit('increaseCoin')
+        this.$store.dispatch('Enemy/init', EnemyPool.getEnemy(this.stage))
+      }
+    }
   }
 }
 </script>
@@ -37,7 +53,7 @@ export default {
     background: $hp;
     color: $dark;
     padding: 0.5rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
   }
 
   .enemy__card {

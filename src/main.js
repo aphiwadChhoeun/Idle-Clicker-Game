@@ -10,6 +10,6 @@ new Vue({
   render: h => h(App),
   created() {
     const enemy = EnemyPool.getEnemy(0)
-    this.$store.dispatch('init', enemy)
+    this.$store.dispatch('Enemy/init', enemy)
   }
 }).$mount('#app')

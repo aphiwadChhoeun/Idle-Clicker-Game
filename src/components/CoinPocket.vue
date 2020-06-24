@@ -3,13 +3,19 @@
     <div class="coin__image">
       <img src="/images/coin.webp" alt="Coin Pocket" />
     </div>
-    <div class="coin__meta">0</div>
+    <div class="coin__meta">{{ coin }}</div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'CoinPocket'
+  name: 'CoinPocket',
+
+  computed: mapState({
+    coin: state => state.coin
+  })
 }
 </script>
 
