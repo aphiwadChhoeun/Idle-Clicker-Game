@@ -16,10 +16,6 @@
       <div class="enemy__meta">
         {{ name }}
       </div>
-
-      <div class="slash" ref="slash">
-        <!-- <img src="images/slash.webp" /> -->
-      </div>
     </div>
   </div>
 </template>
@@ -71,7 +67,7 @@ export default {
 
     this.dieTl = gsap.timeline({ paused: true }).to(this.$refs.card, {
       opacity: 0.0,
-      duration: 0.3,
+      duration: 0.5,
       ease: 'power3.out',
       onComplete: () => {
         const enemy = EnemyPool.getEnemy(this.stage)
@@ -80,17 +76,26 @@ export default {
       }
     })
 
+    const hitEffect = {
+      amount: 0.0
+    }
     this.hitTl = gsap
       .timeline({ paused: true })
-      .to(this.$refs.slash, {
-        opacity: 0.5,
+      .to(hitEffect, {
+        amount: 5.0,
         duration: 0.1,
-        ease: 'power3.out'
+        ease: 'power3.out',
+        onUpdate: () => {
+          this.$refs.card.style.filter = `brightness(${hitEffect.amount})`
+        }
       })
-      .to(this.$refs.slash, {
-        opacity: 0.0,
+      .to(hitEffect, {
+        amount: 1.0,
         duration: 0.1,
-        ease: 'power3.out'
+        ease: 'power3.out',
+        onUpdate: () => {
+          this.$refs.card.style.filter = `brightness(${hitEffect.amount})`
+        }
       })
 
     this.spawnTl.play()
@@ -141,13 +146,16 @@ export default {
   .enemy__card {
     position: relative;
     width: 350px;
+    height: 550px;
     margin-top: 1rem;
-    padding: 1rem;
-    background: $light;
-    border-radius: 1rem;
+    padding: 40px;
+    background: url('/images/card_bg.webp');
+    background-size: cover;
     overflow: hidden;
+    box-sizing: border-box;
 
     .enemy__image {
+      position: relative;
       width: 100%;
       height: auto;
 
@@ -158,25 +166,11 @@ export default {
     }
 
     .enemy__meta {
+      margin-top: 25px;
       font-family: $altFont;
       color: $dark;
       font-size: 1.5rem;
       text-align: center;
-    }
-
-    .slash {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      background: $light;
-
-      img {
-        width: 100%;
-        height: auto;
-      }
     }
   }
 }
