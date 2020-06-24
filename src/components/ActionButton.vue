@@ -26,5 +26,10 @@ export default {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 5px -15px 5px rgba(0, 0, 0, 0.1);
+
+  &:active {
+    box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.1);
+  }
 }
 </style>

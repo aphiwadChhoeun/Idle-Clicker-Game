@@ -5,7 +5,7 @@
         class="healthpoint__bar"
         :style="{ width: hpPercentage + '%' }"
       ></div>
-      <span>{{ hp }}hp</span>
+      <span>{{ hp }} / {{ maxHp }}</span>
     </div>
 
     <div class="enemy__card" ref="card">
@@ -18,7 +18,7 @@
       </div>
 
       <div class="slash" ref="slash">
-        <img src="images/slash.webp" />
+        <!-- <img src="images/slash.webp" /> -->
       </div>
     </div>
   </div>
@@ -110,8 +110,18 @@ export default {
     background: $light;
     color: $dark;
     padding: 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     overflow: hidden;
+
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      box-shadow: inset 0 0 5px $dark;
+    }
 
     .healthpoint__bar {
       position: absolute;
@@ -159,6 +169,7 @@ export default {
       left: 0;
       top: 0;
       width: 100%;
+      height: 100%;
       opacity: 0;
       background: $light;
 

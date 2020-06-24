@@ -14,6 +14,7 @@
   bottom: 0;
   width: 100vw;
   height: 20vh;
+  box-shadow: 0 -15px 5px rgba(0, 0, 0, .1);
 }
 </style>
 
