@@ -29,7 +29,7 @@ export default {
   box-shadow: 5px -15px 5px rgba(0, 0, 0, 0.1);
 
   &:active {
-    box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.1), inset 0 0 25px $dark;
   }
 }
 </style>
