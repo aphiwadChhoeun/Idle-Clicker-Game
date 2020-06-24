@@ -1,16 +1,11 @@
 import EnemySlug from './EnemySlug'
+import { getRandomInt } from './helpers'
 
 const classes = {
   EnemySlug
 }
 
 const POOL = [['EnemySlug']]
-
-function getRandomInt(min, max) {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min)) + min
-}
 
 export default class EnemyPool {
   static getEnemy(stage) {

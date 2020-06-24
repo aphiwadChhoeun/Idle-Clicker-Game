@@ -7,6 +7,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    halt: false,
     stage: 0,
     coin: 0,
     damage: 10

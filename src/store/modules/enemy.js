@@ -13,7 +13,7 @@ export default {
     }
   },
   actions: {
-    init({ state }, enemy) {
+    spawn({ state }, enemy) {
       state.name = enemy.name
       state.hp = enemy.hp
       state.image = enemy.image
