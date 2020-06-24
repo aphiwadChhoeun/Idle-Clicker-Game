@@ -10,6 +10,10 @@ export default {
     decreaseHp: (state, n = 1) => {
       if (state.hp > 0) {
         state.hp -= n
+
+        if (state.hp < 0) {
+          state.hp = 0
+        }
       }
     }
   },
