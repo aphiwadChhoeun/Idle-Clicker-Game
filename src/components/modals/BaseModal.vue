@@ -42,7 +42,7 @@ export default {
     width: 100%;
     height: 100%;
     background: $dark;
-    opacity: 0.8;
+    opacity: 1.0;
   }
 
   .modal__container {

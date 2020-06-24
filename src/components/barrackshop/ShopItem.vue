@@ -1,5 +1,5 @@
 <template>
-  <div class="shop__item box">
+  <div class="shop__item box" :class="{ unavailable: coin < cost }">
     <div class="shop__image box__image">
       <img :src="image" alt="name" />
     </div>
@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'ShopItem',
 
@@ -29,7 +31,9 @@ export default {
         return 'mdi-sword'
       }
       return 'mdi-sword'
-    }
+    },
+
+    ...mapState(['coin'])
   }
 }
 </script>
@@ -38,6 +42,11 @@ export default {
 .shop__item {
   width: 128px;
   box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    filter: contrast(1.5);
+  }
 
   .shop__meta {
     text-align: left;
@@ -47,6 +56,10 @@ export default {
       padding: 0;
       margin: 0;
     }
+  }
+
+  &.unavailable {
+    filter: grayscale(1);
   }
 }
 </style>
