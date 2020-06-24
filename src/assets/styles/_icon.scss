@@ -1,0 +1,10 @@
+.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+
+  &.coin {
+    background: url('/images/coin.webp');
+    background-size: contain;
+  }
+}

@@ -2,6 +2,7 @@
   <div class="action__container">
     <div class="action__wrapper">
       <coin-pocket />
+      <barracks-icon />
     </div>
     <action-button />
   </div>
@@ -31,13 +32,15 @@
 <script>
 import ActionButton from './ActionButton'
 import CoinPocket from './CoinPocket'
+import BarracksIcon from './BarracksIcon'
 
 export default {
   name: 'ActionPanel',
 
   components: {
     ActionButton,
-    CoinPocket
+    CoinPocket,
+    BarracksIcon
   }
 }
 </script>
