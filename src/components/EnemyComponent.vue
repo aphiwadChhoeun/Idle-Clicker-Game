@@ -1,6 +1,12 @@
 <template>
   <div class="enemy__wrapper">
-    <div class="healthpoint">{{ hp }}hp</div>
+    <div class="healthpoint__wrapper">
+      <div
+        class="healthpoint__bar"
+        :style="{ width: hpPercentage + '%' }"
+      ></div>
+      <span>{{ hp }}hp</span>
+    </div>
 
     <div class="enemy__card" ref="card">
       <div class="enemy__image">
@@ -27,13 +33,11 @@ export default {
   name: 'EnemyComponent',
 
   computed: {
-    ...mapState({
-      hp: state => state.Enemy.hp,
-      name: state => state.Enemy.name,
-      image: state => state.Enemy.image,
-
-      stage: state => state.stage
-    })
+    ...mapState('Enemy', ['name', 'hp', 'image', 'maxHp']),
+    ...mapState(['stage']),
+    hpPercentage() {
+      return Math.floor((this.hp * 100) / this.maxHp)
+    }
   },
 
   data() {
@@ -67,7 +71,7 @@ export default {
 
     this.dieTl = gsap.timeline({ paused: true }).to(this.$refs.card, {
       opacity: 0.0,
-      duration: 1,
+      duration: 0.3,
       ease: 'power3.out',
       onComplete: () => {
         const enemy = EnemyPool.getEnemy(this.stage)
@@ -100,12 +104,28 @@ export default {
 .enemy__wrapper {
   width: 100%;
 
-  .healthpoint {
+  .healthpoint__wrapper {
+    position: relative;
     width: 100%;
-    background: $hp;
+    background: $light;
     color: $dark;
     padding: 0.5rem;
     border-radius: 0.5rem;
+    overflow: hidden;
+
+    .healthpoint__bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $primary;
+      transition: all 100ms ease-in-out;
+    }
+
+    span {
+      position: relative;
+    }
   }
 
   .enemy__card {

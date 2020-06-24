@@ -1,9 +1,10 @@
 export default {
   namespaced: true,
   state: () => ({
-    name: 'Bad guy',
-    hp: 100,
-    image: null
+    name: null,
+    hp: 0,
+    image: null,
+    maxHp: 0
   }),
   mutations: {
     decreaseHp: (state, n = 1) => {
@@ -17,6 +18,7 @@ export default {
       state.name = enemy.name
       state.hp = enemy.hp
       state.image = enemy.image
+      state.maxHp = enemy.hp
     }
   }
 }
