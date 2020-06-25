@@ -14,6 +14,8 @@
           :damage="item.damage"
           :damage-type="item.damageType"
           :cost="item.cost"
+          :class-name="item.constructor.name"
+          v-on:buy-done="onBoughtItem"
         />
       </div>
     </template>
@@ -24,7 +26,7 @@
 import BaseModal from './BaseModal'
 import ShopItem from '../barrackshop/ShopItem'
 import HeroPool from '../../lib/hero/HeroPool'
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'BarracksShop',
@@ -42,6 +44,19 @@ export default {
     return {
       items: HeroPool.getAllHeroes()
     }
+  },
+
+  methods: {
+    onBoughtItem(heroClass) {
+      const hero = HeroPool.getHero(heroClass)
+      if (hero) {
+        this.addHero(hero)
+        this.decreaseCoin(hero.cost)
+      }
+    },
+
+    ...mapMutations(['decreaseCoin']),
+    ...mapMutations('Hero', ['addHero'])
   }
 }
 </script>

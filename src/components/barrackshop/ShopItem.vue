@@ -1,7 +1,7 @@
 <template>
   <div class="shop__item box" :class="{ unavailable: !canBuy }" @click="buy">
     <div class="shop__image box__image">
-      <img :src="image" :alt="name" />
+      <img :src="image" :alt="name" width="108" height="108" />
     </div>
     <div class="shop__meta box__meta">
       <p>{{ name }}</p>
@@ -22,7 +22,8 @@ export default {
     image: String,
     cost: Number,
     damage: Number,
-    damageType: String
+    damageType: String,
+    className: String
   },
 
   computed: {
@@ -43,7 +44,7 @@ export default {
   methods: {
     buy() {
       if (this.canBuy) {
-        this.$emit('buy-done')
+        this.$emit('buy-done', this.className)
       }
     }
   }
@@ -53,6 +54,7 @@ export default {
 <style lang="scss" scoped>
 .shop__item {
   width: 128px;
+  padding: 10px;
   box-sizing: border-box;
   cursor: pointer;
 
