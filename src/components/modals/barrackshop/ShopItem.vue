@@ -56,7 +56,6 @@ export default {
   width: 128px;
   padding: 10px;
   margin: 0;
-  box-sizing: border-box;
   cursor: pointer;
 
   &:hover {

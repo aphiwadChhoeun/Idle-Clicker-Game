@@ -39,6 +39,5 @@ export default {
 <style lang="scss" scoped>
 .enemy__wrapper {
   width: 100%;
-  box-sizing: border-box;
 }
 </style>

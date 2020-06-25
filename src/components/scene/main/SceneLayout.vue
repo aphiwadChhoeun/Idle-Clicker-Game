@@ -1,6 +1,6 @@
 <template>
   <div class="scene__layout">
-    <div class="allies__container">allies</div>
+    <div class="hero__container"></div>
     <div class="enemy__container">
       <enemy-component />
     </div>
@@ -23,14 +23,13 @@ export default {
 @import '../../../assets/styles/variables';
 
 .scene__layout {
-  box-sizing: border-box;
   width: 100%;
   height: 100%;
   padding-top: 5rem;
   display: flex;
   justify-content: center;
 
-  .allies__container {
+  .hero__container {
     width: 50%;
   }
 

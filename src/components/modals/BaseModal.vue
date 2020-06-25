@@ -55,13 +55,11 @@ export default {
     background: $gray;
     border-radius: 1rem;
     padding: 0.5rem;
-    box-sizing: border-box;
 
     .modal__header,
     .modal__body {
       font-family: $altFont;
       color: $light;
-      box-sizing: border-box;
     }
 
     .modal__header {

@@ -123,7 +123,6 @@ export default {
   background: url('/images/card_bg.webp');
   background-size: cover;
   overflow: hidden;
-  box-sizing: border-box;
 
   .enemy__image {
     position: relative;

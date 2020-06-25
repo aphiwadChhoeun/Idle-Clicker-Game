@@ -67,11 +67,9 @@ export default {
 .shop__inventory {
   padding: 1rem 1rem;
   width: 100%;
-  box-sizing: border-box;
   background: $dark;
 
   .current__coin {
-    box-sizing: border-box;
     display: inline-block;
     height: 32px;
     text-indent: 35px;
