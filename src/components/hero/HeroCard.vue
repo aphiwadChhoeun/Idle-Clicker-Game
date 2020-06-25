@@ -8,12 +8,31 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'HeroCard',
 
   props: {
     name: String,
-    image: String
+    image: String,
+    damage: Number
+  },
+
+  data() {
+    return {
+      gameLoop: null
+    }
+  },
+
+  mounted() {
+    this.gameLoop = setInterval(() => {
+      this.heroAttack(this.damage)
+    }, 1000)
+  },
+
+  methods: {
+    ...mapActions(['heroAttack'])
   }
 }
 </script>

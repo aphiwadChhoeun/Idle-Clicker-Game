@@ -7,7 +7,7 @@ export default {
     maxHp: 0
   }),
   mutations: {
-    decreaseHp: (state, n = 1) => {
+    damageRecieve: (state, n = 1) => {
       if (state.hp > 0) {
         state.hp -= n
 
