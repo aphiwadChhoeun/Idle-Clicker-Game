@@ -6,10 +6,24 @@ export default {
   }),
   mutations: {
     addHero: (state, hero) => {
-      if (state.heroes.length < state.limit) {
-        state.heroes.push(hero)
-      }
+      state.heroes.push(hero)
     }
   },
-  actions: {}
+  actions: {
+    buyHero({ commit, state }, hero) {
+      return new Promise((resolve, reject) => {
+        if (state.heroes.length < state.limit) {
+          const foundIndex = state.heroes.findIndex(el => el.id === hero.id)
+
+          if (foundIndex === -1) {
+            commit('addHero', hero)
+            resolve()
+          } else {
+            reject(new Error('Cannot buy hero: already owned this hero.'))
+          }
+        }
+        reject(new Error('Cannot buy hero: exceed heroes limit.'))
+      })
+    }
+  }
 }

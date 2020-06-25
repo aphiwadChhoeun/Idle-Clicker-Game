@@ -26,7 +26,7 @@
 import BaseModal from './BaseModal'
 import ShopItem from './barrackshop/ShopItem'
 import HeroPool from '../../lib/hero/HeroPool'
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'BarracksShop',
@@ -50,13 +50,16 @@ export default {
     onBoughtItem(heroId) {
       const hero = HeroPool.getHero(heroId)
       if (hero) {
-        this.addHero(hero)
-        this.decreaseCoin(hero.cost)
+        this.buyHero(hero)
+          .then(() => {
+            this.decreaseCoin(hero.cost)
+          })
+          .catch(error => console.log(error))
       }
     },
 
     ...mapMutations(['decreaseCoin']),
-    ...mapMutations('Hero', ['addHero'])
+    ...mapActions('Hero', ['buyHero'])
   }
 }
 </script>
