@@ -9,12 +9,12 @@
         <shop-item
           v-for="item in items"
           :key="item.name"
+          :id="item.id"
           :name="item.name"
           :image="item.image"
           :damage="item.damage"
           :damage-type="item.damageType"
           :cost="item.cost"
-          :class-name="item.constructor.name"
           v-on:buy-done="onBoughtItem"
         />
       </div>
@@ -47,8 +47,8 @@ export default {
   },
 
   methods: {
-    onBoughtItem(heroClass) {
-      const hero = HeroPool.getHero(heroClass)
+    onBoughtItem(heroId) {
+      const hero = HeroPool.getHero(heroId)
       if (hero) {
         this.addHero(hero)
         this.decreaseCoin(hero.cost)

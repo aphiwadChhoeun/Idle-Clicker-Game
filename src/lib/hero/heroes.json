@@ -1,0 +1,10 @@
+[
+  {
+    "id": "h1001",
+    "name": "Soldier",
+    "image": "/images/soldier_avatar.webp",
+    "cost": 20,
+    "damage": 1,
+    "damageType": "normal"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  [
+    {
+      "name": "Slug Boi",
+      "hp": 20,
+      "image": "/images/slug.webp"
+    },
+    {
+      "name": "Toadah",
+      "hp": 20,
+      "image": "/images/toad.webp"
+    },
+    {
+      "name": "Spiderling",
+      "hp": 25,
+      "image": "/images/wood_spider.webp"
+    }
+  ]
+]

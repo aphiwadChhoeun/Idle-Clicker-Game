@@ -1,13 +1,26 @@
-import HeroSoldier from './HeroSoldier'
+import BaseHero from './BaseHero'
+import heroes from './heroes.json'
 
-const POOL = {
-  HeroSoldier: new HeroSoldier()
-}
+const heroesPool = []
+
+heroes.forEach(data => {
+  heroesPool.push(
+    new BaseHero(
+      data.id,
+      data.name,
+      data.image,
+      data.cost,
+      data.damage,
+      data.damageType
+    )
+  )
+})
 
 export default class HeroPool {
-  static getHero(name) {
-    if (POOL[name]) {
-      return { ...POOL[name] }
+  static getHero(id) {
+    const foundIndex = heroesPool.findIndex(item => item.id === id)
+    if (foundIndex > -1) {
+      return { ...heroesPool[foundIndex] }
     }
 
     return null
@@ -15,7 +28,7 @@ export default class HeroPool {
 
   static getAllHeroes() {
     const curated = []
-    Object.values(POOL).forEach(hero => {
+    Object.values(heroesPool).forEach(hero => {
       curated.push(hero)
     })
 

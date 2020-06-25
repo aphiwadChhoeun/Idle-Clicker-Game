@@ -18,12 +18,12 @@ export default {
   name: 'ShopItem',
 
   props: {
+    id: String,
     name: String,
     image: String,
     cost: Number,
     damage: Number,
-    damageType: String,
-    className: String
+    damageType: String
   },
 
   computed: {
@@ -44,7 +44,7 @@ export default {
   methods: {
     buy() {
       if (this.canBuy) {
-        this.$emit('buy-done', this.className)
+        this.$emit('buy-done', this.id)
       }
     }
   }
