@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import EnemyComponent from './EnemyComponent'
+import EnemyComponent from '../../enemy/EnemyComponent'
 
 export default {
   name: 'SceneLayout',
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/styles/variables';
+@import '../../../assets/styles/variables';
 
 .scene__layout {
   box-sizing: border-box;

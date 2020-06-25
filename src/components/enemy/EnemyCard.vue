@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import EnemyPool from '../lib/enemy/EnemyPool'
+import EnemyPool from '../../lib/enemy/EnemyPool'
 import { gsap } from 'gsap'
 
 export default {
@@ -112,7 +112,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/styles/variables';
+@import '../../assets/styles/variables';
 
 .enemy__card {
   position: relative;

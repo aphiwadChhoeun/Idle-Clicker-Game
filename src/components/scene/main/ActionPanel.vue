@@ -9,7 +9,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/styles/variables';
+@import '../../../assets/styles/variables';
 
 .action__container {
   position: absolute;

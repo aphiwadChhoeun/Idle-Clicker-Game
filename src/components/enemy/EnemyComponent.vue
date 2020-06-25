@@ -9,7 +9,7 @@
 <script>
 import { mapState } from 'vuex'
 import EnemyCard from './EnemyCard'
-import HealthPointBar from './HealthPointBar'
+import HealthPointBar from '../HealthPointBar'
 
 export default {
   name: 'EnemyComponent',
@@ -39,5 +39,6 @@ export default {
 <style lang="scss" scoped>
 .enemy__wrapper {
   width: 100%;
+  box-sizing: border-box;
 }
 </style>

@@ -24,7 +24,7 @@
 
 <script>
 import BaseModal from './BaseModal'
-import ShopItem from '../barrackshop/ShopItem'
+import ShopItem from './barrackshop/ShopItem'
 import HeroPool from '../../lib/hero/HeroPool'
 import { mapState, mapMutations } from 'vuex'
 

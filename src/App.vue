@@ -9,7 +9,7 @@
 <script>
 /* eslint 'no-unused-vars': 'off' */
 import MainHeader from './components/MainHeader'
-import MainScene from './components/MainScene'
+import MainScene from './components/scene/main/MainScene'
 import BarracksShop from './components/modals/BarracksShop'
 import { mapState } from 'vuex'
 

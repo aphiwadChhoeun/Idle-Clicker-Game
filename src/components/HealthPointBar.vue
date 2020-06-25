@@ -32,6 +32,7 @@ export default {
   color: $dark;
   padding: 0.5rem;
   border-radius: 0.2rem;
+  box-sizing: border-box;
   overflow: hidden;
 
   &:after {

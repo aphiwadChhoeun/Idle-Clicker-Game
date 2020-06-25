@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/styles/variables';
+@import '../../../assets/styles/variables';
 
 #btn-action {
   font-family: $altFont;

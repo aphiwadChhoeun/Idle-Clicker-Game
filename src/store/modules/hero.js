@@ -2,17 +2,12 @@ export default {
   namespaced: true,
   state: () => ({
     heroes: [],
-    lineups: [],
-    limit: 4
+    limit: 12
   }),
   mutations: {
     addHero: (state, hero) => {
-      state.heroes.push(hero)
-    },
-
-    addLineups: (state, hero) => {
-      if (state.lineups.length < state.limit) {
-        state.lineups.push(hero)
+      if (state.heroes.length < state.limit) {
+        state.heroes.push(hero)
       }
     }
   },
