@@ -54,7 +54,12 @@ export default {
           .then(() => {
             this.decreaseCoin(hero.cost)
           })
-          .catch(error => console.log(error))
+          .catch(error =>
+            this.$swal({
+              icon: 'error',
+              title: error.message
+            })
+          )
       }
     },
 

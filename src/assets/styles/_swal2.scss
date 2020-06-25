@@ -1,0 +1,9 @@
+@import './variables';
+@import '~sweetalert2/src/variables';
+
+$swal2-background: $gray;
+$swal2-title-color: $light;
+$swal2-confirm-button-background-color: $secondary;
+$swal2-confirm-button-color: $dark;
+
+@import '~sweetalert2/src/sweetalert2';

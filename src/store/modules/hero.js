@@ -19,10 +19,14 @@ export default {
             commit('addHero', hero)
             resolve()
           } else {
-            reject(new Error('Cannot buy hero: already owned this hero.'))
+            reject(new Error(`You already recruited ${hero.name}.`))
           }
         }
-        reject(new Error('Cannot buy hero: exceed heroes limit.'))
+        reject(
+          new Error(
+            `Cannot buy hero: You can't recruit more heroes than limit of ${state.limit}`
+          )
+        )
       })
     }
   }
