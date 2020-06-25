@@ -7,6 +7,10 @@ export default {
   mutations: {
     addHero: (state, hero) => {
       state.heroes.push(hero)
+    },
+
+    levelUpHero: (state, index) => {
+      state.heroes[index].upgradeLevel()
     }
   },
   actions: {
@@ -28,6 +32,13 @@ export default {
           )
         )
       })
+    },
+
+    upgradeHero({ commit, state }, heroId) {
+      const foundIndex = state.heroes.findIndex(el => el.id === heroId)
+      if (foundIndex > -1) {
+        commit('levelUpHero', foundIndex)
+      }
     }
   }
 }

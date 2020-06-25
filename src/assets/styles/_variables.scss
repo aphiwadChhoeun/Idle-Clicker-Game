@@ -2,8 +2,10 @@ $mainFont: 'Roboto', sans-serif;
 $altFont: 'Permanent Marker', cursive;
 
 $primary: #f95959;
+$lightPrimary: lighten($primary, 10%);
 $secondary: #08d9d6;
 $dark: #232931;
 $gray: #393e46;
+$lightGray: lighten($gray, 40%);
 $light: #eeeeee;
 $hp: #f95959;

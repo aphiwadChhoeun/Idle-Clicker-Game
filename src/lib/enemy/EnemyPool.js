@@ -16,7 +16,11 @@ enemies.forEach(stage => {
 export default class EnemyPool {
   static getEnemy(stage) {
     const stagePool = enemyPool[stage]
-    const cloneEnemy = { ...stagePool[getRandomInt(0, stagePool.length)] }
+    const target = stagePool[getRandomInt(0, stagePool.length)]
+    const cloneEnemy = Object.assign(
+      Object.create(Object.getPrototypeOf(target)),
+      target
+    )
 
     return cloneEnemy
   }

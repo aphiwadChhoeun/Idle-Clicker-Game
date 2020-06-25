@@ -6,9 +6,12 @@
       <hero-card
         v-for="hero in heroes"
         :key="hero.id"
+        :id="hero.id"
         :name="hero.name"
         :image="hero.image"
         :damage="hero.damage"
+        :damage-type="hero.damageType"
+        :level="hero.level"
       />
     </div>
   </div>

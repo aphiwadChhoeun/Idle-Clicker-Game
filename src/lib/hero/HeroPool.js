@@ -21,7 +21,10 @@ export default class HeroPool {
   static getHero(id) {
     const foundIndex = heroesPool.findIndex(item => item.id === id)
     if (foundIndex > -1) {
-      return { ...heroesPool[foundIndex] }
+      return Object.assign(
+        Object.create(Object.getPrototypeOf(heroesPool[foundIndex])),
+        heroesPool[foundIndex]
+      )
     }
 
     return null
