@@ -34,10 +34,14 @@ export default {
       })
     },
 
-    upgradeHero({ commit, state }, heroId) {
+    upgradeHero({ commit, state, rootState }, heroId) {
       const foundIndex = state.heroes.findIndex(el => el.id === heroId)
+      const upgradeCost = state.heroes[foundIndex].getUpgradeCost()
       if (foundIndex > -1) {
-        commit('levelUpHero', foundIndex)
+        if (upgradeCost < rootState.coin) {
+          commit('levelUpHero', foundIndex)
+          rootState.coin -= upgradeCost
+        }
       }
     }
   }

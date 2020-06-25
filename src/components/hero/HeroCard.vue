@@ -10,10 +10,8 @@
     </div>
     <div class="hero__actions">
       <button class="upgrade" @click="upgradeHero(id)">
-        <span class="mdi mdi-chevron-double-up"></span>
-      </button>
-      <button class="delete">
-        <span class="mdi mdi-account-remove"></span>
+        <span>Upgrade: </span>
+        <span class="icon coin"></span> <span>{{ upgradeCost }}</span>
       </button>
     </div>
   </div>
@@ -31,7 +29,8 @@ export default {
     image: String,
     damage: Number,
     damageType: String,
-    level: Number
+    level: Number,
+    upgradeCost: Number
   },
 
   computed: {
@@ -50,9 +49,9 @@ export default {
   },
 
   mounted() {
-    // this.gameLoop = setInterval(() => {
-    //   this.heroAttack(this.damage)
-    // }, 1000)
+    this.gameLoop = setInterval(() => {
+      this.heroAttack(this.damage)
+    }, 1000)
   },
 
   methods: {
@@ -66,8 +65,9 @@ export default {
 @import '../../assets/styles/variables';
 
 .hero__card {
+  margin: 0;
   padding: 0;
-  width: 128px;
+  width: 200px;
   overflow: hidden;
 
   .hero__meta {
@@ -96,15 +96,15 @@ export default {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 
     button {
       width: 100%;
-      height: 2rem;
+      height: 3rem;
       border: none;
       border-radius: 0;
       cursor: pointer;
+      text-align: left;
 
       &:focus {
         outline: none;

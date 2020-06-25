@@ -12,6 +12,7 @@
         :damage="hero.damage"
         :damage-type="hero.damageType"
         :level="hero.level"
+        :upgrade-cost="hero.getUpgradeCost()"
       />
     </div>
   </div>
@@ -48,8 +49,9 @@ export default {
     margin-top: 1rem;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
+    justify-items: center;
   }
 }
 </style>
