@@ -118,7 +118,7 @@ export default {
   position: relative;
   width: 350px;
   height: 550px;
-  margin-top: 1rem;
+  margin: 1rem auto;
   padding: 40px;
   background: url('/images/card_bg.webp');
   background-size: cover;

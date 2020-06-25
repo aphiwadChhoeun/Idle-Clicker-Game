@@ -9,7 +9,8 @@
 <style lang="scss" scoped>
 .header {
   position: fixed;
-  width: 100vw;
+  top: 0;
+  width: 100%;
 
   .header__wrapper {
     width: 80vw;

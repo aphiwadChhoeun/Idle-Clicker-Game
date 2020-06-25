@@ -1,9 +1,44 @@
 <template>
-  <div class="hero__wrapper"></div>
+  <div class="heroes__wrapper">
+    <div class="heroes__title">Heroes ({{ heroes.length }}/{{ limit }})</div>
+    <div class="heroes__container">
+      <hero-card
+        v-for="hero in heroes"
+        :key="hero.id"
+        :name="hero.name"
+        :image="hero.image"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+import HeroCard from './HeroCard'
+
+export default {
+  name: 'HeroComponent',
+
+  components: {
+    HeroCard
+  },
+
+  computed: {
+    ...mapState('Hero', ['heroes', 'limit'])
+  }
+}
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.heroes__wrapper {
+  width: 100%;
+
+  .heroes__container {
+    margin-top: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem;
+  }
+}
+</style>

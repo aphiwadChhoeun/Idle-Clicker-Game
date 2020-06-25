@@ -12,10 +12,11 @@
 @import '../../../assets/styles/variables';
 
 .action__container {
-  position: absolute;
-  background: $gray;
+  position: fixed;
   bottom: 0;
-  width: 100vw;
+  display: block;
+  background: $gray;
+  width: 100%;
   height: 20vh;
   box-shadow: 0 -15px 5px rgba(0, 0, 0, 0.1);
 

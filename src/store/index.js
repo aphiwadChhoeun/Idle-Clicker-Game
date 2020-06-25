@@ -11,7 +11,7 @@ const store = new Vuex.Store({
   state: {
     halt: false,
     stage: 0,
-    coin: 20,
+    coin: 1000,
     damage: 10
   },
   mutations: {

@@ -1,7 +1,7 @@
 [
   {
     "id": "h1001",
-    "name": "Soldier",
+    "name": "Gard",
     "avatar": "/images/soldier_avatar.webp",
     "image": "/images/soldier.webp",
     "cost": 20,
@@ -10,7 +10,7 @@
   },
   {
     "id": "h1002",
-    "name": "Archer",
+    "name": "Leonae",
     "avatar": "/images/archer_avatar.webp",
     "image": "/images/archer.webp",
     "cost": 35,

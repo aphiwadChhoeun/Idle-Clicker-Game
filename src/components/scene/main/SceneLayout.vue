@@ -1,6 +1,8 @@
 <template>
   <div class="scene__layout">
-    <div class="hero__container"></div>
+    <div class="hero__container">
+      <hero-component />
+    </div>
     <div class="enemy__container">
       <enemy-component />
     </div>
@@ -8,12 +10,14 @@
 </template>
 
 <script>
+import HeroComponent from '../../hero/HeroComponent'
 import EnemyComponent from '../../enemy/EnemyComponent'
 
 export default {
   name: 'SceneLayout',
 
   components: {
+    HeroComponent,
     EnemyComponent
   }
 }
@@ -24,17 +28,17 @@ export default {
 
 .scene__layout {
   width: 100%;
-  height: 100%;
-  padding-top: 5rem;
+  padding: 0 2rem;
   display: flex;
   justify-content: center;
 
   .hero__container {
-    width: 50%;
+    padding: 0.5rem;
+    flex: 1;
   }
 
   .enemy__container {
-    width: 50%;
+    flex: 0;
   }
 }
 </style>

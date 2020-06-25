@@ -1,5 +1,5 @@
 <template>
-  <div class="scene__container container">
+  <div class="scene__container">
     <scene-layout />
     <action-panel />
   </div>
@@ -7,10 +7,8 @@
 
 <style lang="scss" scoped>
 .scene__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  display: block;
+  margin-top: 4rem;
 }
 </style>
 
