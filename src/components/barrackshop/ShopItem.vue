@@ -1,12 +1,12 @@
 <template>
-  <div class="shop__item box" :class="{ unavailable: coin < cost }">
+  <div class="shop__item box" :class="{ unavailable: !canBuy }" @click="buy">
     <div class="shop__image box__image">
-      <img :src="image" alt="name" />
+      <img :src="image" :alt="name" />
     </div>
     <div class="shop__meta box__meta">
       <p>{{ name }}</p>
       <p><span class="icon coin"></span> {{ cost }}</p>
-      <p><span class="mdi" :class="dmgIcon"></span> {{ dmgAmount }}</p>
+      <p><span class="mdi" :class="damageIcon"></span> {{ damage }}</p>
     </div>
   </div>
 </template>
@@ -21,19 +21,31 @@ export default {
     name: String,
     image: String,
     cost: Number,
-    dmgAmount: Number,
-    dmgType: String
+    damage: Number,
+    damageType: String
   },
 
   computed: {
-    dmgIcon() {
-      if (this.dmgType === 'normal') {
+    damageIcon() {
+      if (this.damageType === 'normal') {
         return 'mdi-sword'
       }
       return 'mdi-sword'
     },
 
+    canBuy() {
+      return this.coin >= this.cost
+    },
+
     ...mapState(['coin'])
+  },
+
+  methods: {
+    buy() {
+      if (this.canBuy) {
+        this.$emit('buy-done')
+      }
+    }
   }
 }
 </script>

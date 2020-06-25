@@ -10,12 +10,19 @@ const store = new Vuex.Store({
   state: {
     halt: false,
     stage: 0,
-    coin: 0,
+    coin: 20,
     damage: 10
   },
   mutations: {
     increaseCoin: state => {
       state.coin += 1
+    },
+
+    decreaseCoin: (state, amount) => {
+      state.coin -= amount
+      if (state.coin < 0) {
+        state.coin = 0
+      }
     }
   },
   actions: {

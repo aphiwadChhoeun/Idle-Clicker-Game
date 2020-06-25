@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
-import EnemyPool from './lib/EnemyPool'
+import EnemyPool from './lib/enemy/EnemyPool'
 
 Vue.config.productionTip = false
 

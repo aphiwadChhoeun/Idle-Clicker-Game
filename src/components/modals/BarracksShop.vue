@@ -11,8 +11,8 @@
           :key="item.name"
           :name="item.name"
           :image="item.image"
-          :dmg-amount="item.dmgAmount"
-          :dmg-type="item.dmgType"
+          :damage="item.damage"
+          :damage-type="item.damageType"
           :cost="item.cost"
         />
       </div>
@@ -23,6 +23,7 @@
 <script>
 import BaseModal from './BaseModal'
 import ShopItem from '../barrackshop/ShopItem'
+import HeroPool from '../../lib/hero/HeroPool'
 import { mapState } from 'vuex'
 
 export default {
@@ -39,15 +40,7 @@ export default {
 
   data() {
     return {
-      items: [
-        {
-          name: 'Soldier',
-          image: '/images/soldier_avatar.webp',
-          dmgAmount: 1,
-          dmgType: 'normal',
-          cost: 20
-        }
-      ]
+      items: HeroPool.getAllHeroes()
     }
   }
 }

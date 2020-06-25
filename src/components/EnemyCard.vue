@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import EnemyPool from '../lib/EnemyPool'
+import EnemyPool from '../lib/enemy/EnemyPool'
 import { gsap } from 'gsap'
 
 export default {
