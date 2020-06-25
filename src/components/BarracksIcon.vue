@@ -31,7 +31,6 @@ $iconSize: 150px;
   justify-content: center;
   cursor: pointer;
   transition: all 300ms ease-out;
-  border: 1px solid $dark;
 
   &:hover {
     filter: contrast(1.5);

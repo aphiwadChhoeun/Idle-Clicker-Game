@@ -2,9 +2,19 @@
   {
     "id": "h1001",
     "name": "Soldier",
-    "image": "/images/soldier_avatar.webp",
+    "avatar": "/images/soldier_avatar.webp",
+    "image": "/images/soldier.webp",
     "cost": 20,
     "damage": 1,
+    "damageType": "normal"
+  },
+  {
+    "id": "h1002",
+    "name": "Archer",
+    "avatar": "/images/archer_avatar.webp",
+    "image": "/images/archer.webp",
+    "cost": 35,
+    "damage": 2,
     "damageType": "normal"
   }
 ]

@@ -2,7 +2,7 @@
   <base-modal>
     <template v-slot:header>Barracks</template>
     <template v-slot:body>
-      <div class="shop__meta">
+      <div class="shop__inventory">
         <div class="current__coin">{{ coin }}</div>
       </div>
       <div class="shop__container">
@@ -11,7 +11,7 @@
           :key="item.name"
           :id="item.id"
           :name="item.name"
-          :image="item.image"
+          :avatar="item.avatar"
           :damage="item.damage"
           :damage-type="item.damageType"
           :cost="item.cost"
@@ -64,7 +64,7 @@ export default {
 <style lang="scss">
 @import '../../assets/styles/variables';
 
-.shop__meta {
+.shop__inventory {
   padding: 1rem 1rem;
   width: 100%;
   box-sizing: border-box;
@@ -73,18 +73,20 @@ export default {
   .current__coin {
     box-sizing: border-box;
     display: inline-block;
-    padding-top: 0.5rem;
     height: 32px;
     text-indent: 35px;
     background: url('/images/coin.webp');
     background-repeat: no-repeat;
     background-size: 32px;
+    font-size: 2rem;
   }
 }
 .shop__container {
   width: 100%;
   display: grid;
   margin-top: 0.5rem;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  justify-items: center;
+  grid-gap: 0.5rem;
 }
 </style>

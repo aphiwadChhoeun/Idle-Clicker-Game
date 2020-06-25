@@ -1,7 +1,7 @@
 <template>
   <div class="shop__item box" :class="{ unavailable: !canBuy }" @click="buy">
     <div class="shop__image box__image">
-      <img :src="image" :alt="name" width="108" height="108" />
+      <img :src="avatar" :alt="name" width="108" height="108" />
     </div>
     <div class="shop__meta box__meta">
       <p>{{ name }}</p>
@@ -20,7 +20,7 @@ export default {
   props: {
     id: String,
     name: String,
-    image: String,
+    avatar: String,
     cost: Number,
     damage: Number,
     damageType: String
@@ -55,6 +55,7 @@ export default {
 .shop__item {
   width: 128px;
   padding: 10px;
+  margin: 0;
   box-sizing: border-box;
   cursor: pointer;
 

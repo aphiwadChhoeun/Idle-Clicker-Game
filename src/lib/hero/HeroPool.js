@@ -8,6 +8,7 @@ heroes.forEach(data => {
     new BaseHero(
       data.id,
       data.name,
+      data.avatar,
       data.image,
       data.cost,
       data.damage,
