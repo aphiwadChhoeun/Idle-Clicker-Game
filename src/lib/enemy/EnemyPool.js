@@ -8,7 +8,7 @@ const enemyPool = []
 enemies.forEach(stage => {
   const layer = []
   stage.forEach(data => {
-    layer.push(new BaseEnemy(data.name, data.hp, data.image))
+    layer.push(new BaseEnemy(data.name, data.hp, data.image, data.bounty))
   })
   enemyPool.push(layer)
 })

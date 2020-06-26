@@ -11,12 +11,12 @@ const store = new Vuex.Store({
   state: {
     halt: false,
     stage: 0,
-    coin: 1000,
-    damage: 1
+    coin: 50,
+    damage: 5
   },
   mutations: {
-    increaseCoin: state => {
-      state.coin += 1
+    increaseCoin: (state, amount = 1) => {
+      state.coin += amount
     },
 
     decreaseCoin: (state, amount) => {
@@ -28,7 +28,7 @@ const store = new Vuex.Store({
   },
   actions: {
     attack({ commit, state }) {
-      if (state.Enemy.hp > 0) {
+      if (state.Enemy.enemy.hp > 0) {
         commit('Enemy/damageRecieve', state.damage)
       }
     },

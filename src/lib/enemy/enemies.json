@@ -3,17 +3,20 @@
     {
       "name": "Slug Boi",
       "hp": 20,
-      "image": "/images/slug.webp"
+      "image": "/images/slug.webp",
+      "bounty": 1
     },
     {
       "name": "Toadah",
       "hp": 20,
-      "image": "/images/toad.webp"
+      "image": "/images/toad.webp",
+      "bounty": 1
     },
     {
       "name": "Spiderling",
       "hp": 25,
-      "image": "/images/wood_spider.webp"
+      "image": "/images/wood_spider.webp",
+      "bounty": 2
     }
   ]
 ]

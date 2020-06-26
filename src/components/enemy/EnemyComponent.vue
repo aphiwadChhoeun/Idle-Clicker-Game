@@ -2,7 +2,14 @@
   <div class="enemy__wrapper">
     <health-point-bar :hp="hp" :maxHp="maxHp" />
 
-    <enemy-card ref="enemyCard" :name="name" :image="image" :stage="stage" />
+    <enemy-card
+      ref="enemyCard"
+      :name="name"
+      :image="image"
+      :level="level"
+      :bounty="bounty"
+      :stage="stage"
+    />
   </div>
 </template>
 
@@ -20,14 +27,21 @@ export default {
   },
 
   computed: {
-    ...mapState('Enemy', ['name', 'hp', 'image', 'maxHp']),
+    ...mapState('Enemy', {
+      name: state => state.enemy.name,
+      hp: state => state.enemy.hp,
+      maxHp: state => state.enemy.maxHp,
+      image: state => state.enemy.image,
+      level: state => state.enemy.level,
+      bounty: state => state.enemy.bounty
+    }),
     ...mapState(['stage'])
   },
 
   watch: {
     hp(newHp) {
       if (newHp <= 0) {
-        this.$store.commit('increaseCoin')
+        this.$store.commit('increaseCoin', this.bounty)
         this.$refs.enemyCard.onDie()
       }
       this.$refs.enemyCard.onHit()

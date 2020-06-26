@@ -5,7 +5,7 @@
     "avatar": "/images/soldier_avatar.webp",
     "image": "/images/soldier.webp",
     "cost": 20,
-    "damage": 1,
+    "damage": 4,
     "damageType": "normal"
   },
   {
@@ -13,8 +13,8 @@
     "name": "Leonae",
     "avatar": "/images/archer_avatar.webp",
     "image": "/images/archer.webp",
-    "cost": 35,
-    "damage": 2,
+    "cost": 50,
+    "damage": 10,
     "damageType": "normal"
   }
 ]

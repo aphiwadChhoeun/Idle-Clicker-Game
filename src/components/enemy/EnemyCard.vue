@@ -4,9 +4,8 @@
       <img :src="image" :alt="name" />
     </div>
 
-    <div class="enemy__meta">
-      {{ name }}
-    </div>
+    <div class="enemy__meta">Lvl.{{ level }} {{ name }}</div>
+    <div>{{ bounty }}</div>
   </div>
 </template>
 
@@ -20,6 +19,8 @@ export default {
   props: {
     name: String,
     image: String,
+    level: Number,
+    bounty: Number,
     stage: Number
   },
 
