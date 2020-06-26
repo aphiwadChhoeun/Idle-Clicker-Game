@@ -1,9 +1,9 @@
 <template>
   <div class="icon__container box" @click="openModal('BarracksShop')">
-    <div class="box__image">
+    <div class="icon__image box__image">
       <img src="/images/barracks.webp" alt="Barracks" />
     </div>
-    <div class="box__meta">Barracks</div>
+    <div class="icon__meta box__meta">Barracks</div>
   </div>
 </template>
 
@@ -41,9 +41,17 @@ $iconSize: 18vh;
     box-shadow: inset 0 0 15px $dark;
   }
 
-  img {
-    width: 100%;
-    height: 100%;
+  .icon__image {
+    width: 70%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .icon__meta {
+    font-size: 1rem;
   }
 }
 </style>

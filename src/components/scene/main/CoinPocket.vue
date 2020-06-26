@@ -71,7 +71,7 @@ $boxSize: 18vh;
   background: $light;
 
   .coin__image {
-    width: 5rem;
+    width: 70%;
     height: auto;
 
     img {

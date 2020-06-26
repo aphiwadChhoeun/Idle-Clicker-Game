@@ -17,6 +17,24 @@
       "hp": 25,
       "image": "/images/wood_spider.webp",
       "bounty": 2
+    },
+    {
+      "name": "Crabasaur",
+      "hp": 40,
+      "image": "/images/crab.webp",
+      "bounty": 4
+    },
+    {
+      "name": "Undead Skeleton",
+      "hp": 25,
+      "image": "/images/skeleton.webp",
+      "bounty": 2
+    },
+    {
+      "name": "Spider King",
+      "hp": 100,
+      "image": "/images/spider_king.webp",
+      "bounty": 10
     }
   ]
 ]
