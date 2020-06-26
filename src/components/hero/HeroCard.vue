@@ -3,6 +3,9 @@
     <div class="hero__image box__image">
       <img :src="image" :alt="name" />
     </div>
+    <div class="hero__attack__gauge">
+      <div class="gauge" ref="attackGauge"></div>
+    </div>
     <div class="hero__meta box__meta">
       <p class="name">{{ name }}</p>
       <p><span>Lvl</span> {{ level }}</p>
@@ -19,6 +22,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import { gsap } from 'gsap'
 
 export default {
   name: 'HeroCard',
@@ -42,16 +46,32 @@ export default {
     }
   },
 
+  watch: {
+    gameLoop(val) {
+      if (val !== null) {
+        gsap.to(this.$refs.attackGauge, {
+          startAt: {
+            width: '0%'
+          },
+          width: '100%',
+          duration: 1.0,
+          repeat: -1
+        })
+      }
+    }
+  },
+
   data() {
     return {
-      gameLoop: null
+      gameLoop: null,
+      attackSpeed: 1000
     }
   },
 
   mounted() {
     this.gameLoop = setInterval(() => {
       this.heroAttack(this.damage)
-    }, 1000)
+    }, this.attackSpeed)
   },
 
   methods: {
@@ -69,6 +89,17 @@ export default {
   padding: 0;
   width: 200px;
   overflow: hidden;
+
+  .hero__attack__gauge {
+    width: 100%;
+    height: 1rem;
+
+    .gauge {
+      width: 0%;
+      height: 100%;
+      background: $secondary;
+    }
+  }
 
   .hero__meta {
     padding: 0 0.5rem 0.5rem 0.5rem;
