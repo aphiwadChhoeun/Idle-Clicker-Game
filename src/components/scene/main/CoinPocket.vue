@@ -3,7 +3,7 @@
     <div class="coin__image" ref="coin">
       <img src="/images/coin.webp" alt="Coin Pocket" />
     </div>
-    <div class="box__meta coin__meta">{{ coin }}</div>
+    <div class="box__meta coin__meta">{{ coin | numeral('0.[0]a') }}</div>
   </div>
 </template>
 

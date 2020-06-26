@@ -3,10 +3,8 @@
     <div class="hero__image box__image">
       <img :src="image" :alt="name" />
     </div>
-    <div class="hero__attack__gauge">
-      <div class="gauge" ref="attackGauge"></div>
-    </div>
     <div class="hero__meta box__meta">
+      <div class="gauge" ref="attackGauge"></div>
       <p class="name">{{ name }}</p>
       <p><span>Lvl</span> {{ level }}</p>
       <p><span class="mdi" :class="damageIcon"></span> {{ damage }}</p>
@@ -14,7 +12,7 @@
     <div class="hero__actions">
       <button class="upgrade" @click="upgradeHero(id)">
         <span>Upgrade: </span>
-        <span class="icon coin"></span> <span>{{ upgradeCost }}</span>
+        <span class="icon coin"></span> <span>{{ upgradeCost | numeral('0.[0]a') }}</span>
       </button>
     </div>
   </div>
@@ -90,22 +88,23 @@ export default {
   width: 200px;
   overflow: hidden;
 
-  .hero__attack__gauge {
-    width: 100%;
-    height: 1rem;
-
-    .gauge {
-      width: 0%;
-      height: 100%;
-      background: $secondary;
-    }
-  }
-
   .hero__meta {
     padding: 0 0.5rem 0.5rem 0.5rem;
     background: $primary;
+    position: relative;
+
+    .gauge {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0%;
+      height: 100%;
+      background: $lightPrimary;
+      z-index: 0;
+    }
 
     p {
+      position: relative;
       margin: 0;
       padding: 0;
       text-align: left;

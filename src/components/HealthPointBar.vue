@@ -1,7 +1,7 @@
 <template>
   <div class="healthpoint__wrapper">
     <div class="healthpoint__bar" :style="{ width: hpPercentage + '%' }"></div>
-    <span>{{ hp }} / {{ maxHp }}</span>
+    <span>{{ hp | numeral('0.[0]a') }} / {{ maxHp | numeral('0.[0]a') }}</span>
   </div>
 </template>
 
