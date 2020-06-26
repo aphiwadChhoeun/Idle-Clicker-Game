@@ -1,5 +1,9 @@
 <template>
-  <div class="shop__item box" :class="{ unavailable: !canBuy }" @click="buy">
+  <div
+    class="shop__item box"
+    :class="{ unavailable: !canBuy, recruited: recruited }"
+    @click="buy"
+  >
     <div class="shop__image box__image">
       <img :src="avatar" :alt="name" width="108" height="108" />
     </div>
@@ -38,7 +42,13 @@ export default {
       return this.coin >= this.cost
     },
 
-    ...mapState(['coin'])
+    recruited() {
+      const foundIndex = this.heroes.findIndex(el => el.id === this.id)
+      return foundIndex > -1
+    },
+
+    ...mapState(['coin']),
+    ...mapState('Hero', ['heroes'])
   },
 
   methods: {
@@ -52,11 +62,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../assets/styles/variables';
+
 .shop__item {
   width: 128px;
   padding: 10px;
   margin: 0;
   cursor: pointer;
+  overflow: hidden;
 
   &:hover {
     filter: contrast(1.5);
@@ -74,6 +87,30 @@ export default {
 
   &.unavailable {
     filter: grayscale(1);
+  }
+
+  &.recruited {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $light;
+      opacity: 0.2;
+    }
+
+    &:after {
+      content: 'Recruited';
+      font-family: $altFont;
+      font-size: 1.8rem;
+      position: absolute;
+      left: 50%;
+      top: 25%;
+      transform: translateX(-50%) rotate(-45deg);
+      color: $dark;
+    }
   }
 }
 </style>

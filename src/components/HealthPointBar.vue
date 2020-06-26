@@ -31,7 +31,6 @@ export default {
   background: $light;
   color: $dark;
   padding: 0.5rem;
-  border-radius: 0.2rem;
   overflow: hidden;
 
   &:after {

@@ -12,7 +12,8 @@
     <div class="hero__actions">
       <button class="upgrade" @click="upgradeHero(id)">
         <span>Upgrade: </span>
-        <span class="icon coin"></span> <span>{{ upgradeCost | numeral('0.[0]a') }}</span>
+        <span class="icon coin"></span>
+        <span>{{ upgradeCost | numeral('0.[0]a') }}</span>
       </button>
     </div>
   </div>
