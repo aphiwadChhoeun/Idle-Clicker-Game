@@ -2,6 +2,8 @@
   <div class="enemy__wrapper">
     <health-point-bar :hp="hp" :maxHp="maxHp" />
 
+    <enemy-progress />
+
     <enemy-card
       ref="enemyCard"
       :name="name"
@@ -17,12 +19,14 @@
 import { mapState } from 'vuex'
 import EnemyCard from './EnemyCard'
 import HealthPointBar from '../HealthPointBar'
+import EnemyProgress from './EnemyProgress'
 
 export default {
   name: 'EnemyComponent',
 
   components: {
     HealthPointBar,
+    EnemyProgress,
     EnemyCard
   },
 

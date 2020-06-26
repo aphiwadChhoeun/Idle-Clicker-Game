@@ -38,7 +38,7 @@ export default {
       const foundIndex = state.heroes.findIndex(el => el.id === heroId)
       const upgradeCost = state.heroes[foundIndex].getUpgradeCost()
       if (foundIndex > -1) {
-        if (upgradeCost < rootState.coin) {
+        if (upgradeCost <= rootState.coin) {
           commit('levelUpHero', foundIndex)
           rootState.coin -= upgradeCost
         }

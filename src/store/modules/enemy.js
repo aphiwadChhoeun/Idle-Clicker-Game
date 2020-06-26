@@ -3,7 +3,7 @@ export default {
   state: () => ({
     enemy: null,
     level: 0,
-    interval: 2,
+    interval: 10,
     counter: 0
   }),
   mutations: {

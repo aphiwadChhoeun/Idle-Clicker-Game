@@ -5,7 +5,6 @@
     </div>
 
     <div class="enemy__meta">Lvl.{{ level }} {{ name }}</div>
-    <div>{{ bounty }}</div>
   </div>
 </template>
 

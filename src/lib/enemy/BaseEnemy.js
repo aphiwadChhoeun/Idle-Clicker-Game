@@ -25,7 +25,7 @@ export default class BaseEnemy {
   }
 
   recalibrateHp() {
-    this.hp += Math.ceil(this.level * this.hp * 0.5)
+    this.hp += Math.ceil(this.level * this.hp * 1.2)
     this.maxHp = this.hp
   }
 }

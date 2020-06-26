@@ -25,6 +25,6 @@ export default class BaseHero {
   }
 
   getUpgradeCost() {
-    return Math.ceil(this.level * this.cost * 0.2)
+    return Math.ceil(this.level * this.cost * 0.3)
   }
 }
