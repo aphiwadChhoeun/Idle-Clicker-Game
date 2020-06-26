@@ -5,7 +5,7 @@
     "avatar": "/images/soldier_avatar.webp",
     "image": "/images/soldier.webp",
     "cost": 20,
-    "damage": 4,
+    "damage": 5,
     "damageType": "normal"
   },
   {
@@ -15,6 +15,42 @@
     "image": "/images/archer.webp",
     "cost": 50,
     "damage": 10,
+    "damageType": "normal"
+  },
+  {
+    "id": "h1003",
+    "name": "Elyn",
+    "avatar": "/images/mage_avatar.webp",
+    "image": "/images/mage.webp",
+    "cost": 150,
+    "damage": 25,
+    "damageType": "normal"
+  },
+  {
+    "id": "h1004",
+    "name": "Thulrak",
+    "avatar": "/images/dwarf_avatar.webp",
+    "image": "/images/dwarf.webp",
+    "cost": 170,
+    "damage": 30,
+    "damageType": "normal"
+  },
+  {
+    "id": "h1005",
+    "name": "Merisa",
+    "avatar": "/images/bow_avatar.webp",
+    "image": "/images/bow.webp",
+    "cost": 200,
+    "damage": 35,
+    "damageType": "normal"
+  },
+  {
+    "id": "h1006",
+    "name": "Ulfu",
+    "avatar": "/images/rogue_avatar.webp",
+    "image": "/images/rogue.webp",
+    "cost": 280,
+    "damage": 45,
     "damageType": "normal"
   }
 ]

@@ -24,7 +24,10 @@ export default {
     totalDps() {
       if (this.heroes.length <= 0) return 0
       if (this.heroes.length === 1) return this.heroes[0].damage
-      return this.heroes.reduce((t1, t2) => t1.damage + t2.damage)
+      return this.heroes.reduce(
+        (accumulator, currentValue) => accumulator + currentValue.damage,
+        0
+      )
     }
   }
 }

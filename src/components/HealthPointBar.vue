@@ -56,6 +56,7 @@ export default {
 
   span {
     position: relative;
+    color: $dark;
   }
 }
 </style>
