@@ -28,7 +28,6 @@ export default {
 
 .scene__layout {
   width: 100%;
-  padding: 0 2rem 25vh 2rem;
   display: flex;
   justify-content: center;
 
