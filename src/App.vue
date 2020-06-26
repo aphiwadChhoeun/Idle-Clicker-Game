@@ -2,7 +2,7 @@
   <div id="app">
     <main-header />
     <main-scene />
-    <component :is="modal" v-if="open" />
+    <modal-collection />
   </div>
 </template>
 
@@ -10,8 +10,7 @@
 /* eslint 'no-unused-vars': 'off' */
 import MainHeader from './components/MainHeader'
 import MainScene from './components/scene/main/MainScene'
-import BarracksShop from './components/modals/BarracksShop'
-import { mapState } from 'vuex'
+import ModalCollection from './components/ModalCollection'
 
 export default {
   name: 'App',
@@ -19,10 +18,8 @@ export default {
   components: {
     MainHeader,
     MainScene,
-    BarracksShop
-  },
-
-  computed: mapState('Modal', ['open', 'modal'])
+    ModalCollection
+  }
 }
 </script>
 

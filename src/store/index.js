@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import EnemyStore from './modules/enemy'
 import ModalStore from './modules/modal'
 import HeroStore from './modules/hero'
+import SettingsStore from './modules/settings'
 
 Vue.use(Vuex)
 
@@ -40,7 +41,8 @@ const store = new Vuex.Store({
   modules: {
     Enemy: EnemyStore,
     Modal: ModalStore,
-    Hero: HeroStore
+    Hero: HeroStore,
+    Settings: SettingsStore
   }
 })
 

@@ -30,6 +30,7 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 0 2rem;
 
   .hero__container {
     padding: 0.5rem;

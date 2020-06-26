@@ -8,7 +8,7 @@
 <style lang="scss" scoped>
 .scene__container {
   display: block;
-  padding: 4rem 2rem 1rem 2rem;
+  padding: 4rem 0;
   overflow-y: scroll;
   max-height: 80vh;
 }

@@ -3,6 +3,7 @@
     <div class="action__wrapper">
       <coin-pocket />
       <barracks-icon />
+      <settings-icon />
     </div>
     <action-button />
   </div>
@@ -33,7 +34,8 @@
 <script>
 import ActionButton from './ActionButton'
 import CoinPocket from './CoinPocket'
-import BarracksIcon from './BarracksIcon'
+import BarracksIcon from '../menu/BarracksIcon'
+import SettingsIcon from '../menu/SettingsIcon'
 
 export default {
   name: 'ActionPanel',
@@ -41,7 +43,8 @@ export default {
   components: {
     ActionButton,
     CoinPocket,
-    BarracksIcon
+    BarracksIcon,
+    SettingsIcon
   }
 }
 </script>

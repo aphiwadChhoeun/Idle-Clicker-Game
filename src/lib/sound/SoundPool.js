@@ -8,6 +8,7 @@ const themeMusic = new Howl({
   loop: true,
   volume: 0.4
 })
+export const themeMusicSettings = themeMusic
 export const playThemeMusic = () => {
   themeMusic.play()
 }
