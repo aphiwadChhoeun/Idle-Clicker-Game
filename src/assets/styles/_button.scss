@@ -2,7 +2,6 @@
 
 .button {
   padding: 1rem;
-  background: $primary;
   box-sizing: border-box;
   cursor: pointer;
   transition: all 100ms ease-out;
@@ -28,5 +27,13 @@
     width: $size;
     height: $size;
     border-radius: 50%;
+  }
+
+  &.is-primary {
+    background: $primary;
+  }
+
+  &.is-gray {
+    background: $gray;
   }
 }

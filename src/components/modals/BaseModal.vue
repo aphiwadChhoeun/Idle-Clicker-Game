@@ -2,6 +2,9 @@
   <div class="modal__wrapper">
     <div class="modal__backdrop" @click="closeModal"></div>
     <div class="modal__container">
+      <div class="close__button button is-gray" @click="closeModal">
+        <span class="mdi mdi-close-box-outline"></span>
+      </div>
       <div class="modal__header">
         <slot name="header"></slot>
       </div>
@@ -42,7 +45,7 @@ export default {
     width: 100%;
     height: 100%;
     background: $dark;
-    opacity: 1.0;
+    opacity: 1;
   }
 
   .modal__container {
@@ -55,6 +58,16 @@ export default {
     background: $gray;
     border-radius: 1rem;
     padding: 0.5rem;
+
+    .close__button {
+      position: absolute;
+      right: 1rem;
+      top: 0.5rem;
+      cursor: pointer;
+      font-size: 2rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+    }
 
     .modal__header,
     .modal__body {

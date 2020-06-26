@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button id="btn-action" class="button is-round" @click="onAttack">
+    <button id="btn-action" class="button is-primary is-round" @click="onAttack">
       Attack
     </button>
   </div>
