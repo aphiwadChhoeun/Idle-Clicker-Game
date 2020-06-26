@@ -7,12 +7,15 @@
 </template>
 
 <script>
+import { playSwish } from '../../../lib/sound/SoundPool'
+
 export default {
   name: 'ActionButton',
 
   methods: {
     onAttack() {
       this.$store.dispatch('attack')
+      playSwish()
     }
   }
 }

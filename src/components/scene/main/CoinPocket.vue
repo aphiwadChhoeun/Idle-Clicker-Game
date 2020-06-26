@@ -10,6 +10,7 @@
 <script>
 import { mapState } from 'vuex'
 import { gsap } from 'gsap'
+import { playCoin, playBuy } from '../../../lib/sound/SoundPool'
 
 export default {
   name: 'CoinPocket',
@@ -19,8 +20,14 @@ export default {
   }),
 
   watch: {
-    coin() {
-      this.earnTl.restart()
+    coin(newVal, oldVal) {
+      // earning
+      if (oldVal < newVal) {
+        this.earnTl.restart()
+        playCoin()
+      } else if (oldVal > newVal) {
+        playBuy()
+      }
     }
   },
 
