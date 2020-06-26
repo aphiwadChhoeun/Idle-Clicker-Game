@@ -68,7 +68,6 @@ $boxSize: 18vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: $light;
 
   .coin__image {
     width: 70%;
