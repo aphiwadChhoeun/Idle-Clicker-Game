@@ -7,14 +7,18 @@
 </template>
 
 <style lang="scss" scoped>
+@import '../assets/styles/variables';
+
 .header {
+  background: $dark;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 
   .header__wrapper {
     width: 80vw;
-    padding: 1rem 0;
+    padding: 1rem 0 0.5rem;
     margin: 0 auto;
 
     .title {

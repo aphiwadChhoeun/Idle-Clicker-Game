@@ -59,7 +59,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../../assets/styles/variables';
 
-$boxSize: 180px;
+$boxSize: 18vh;
 
 .coin__pocket {
   width: $boxSize;

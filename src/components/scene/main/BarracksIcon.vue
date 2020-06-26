@@ -22,10 +22,11 @@ export default {
 <style lang="scss">
 @import '../../../assets/styles/variables';
 
-$iconSize: 150px;
+$iconSize: 18vh;
 
 .icon__container {
   width: $iconSize;
+  height: $iconSize;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +43,7 @@ $iconSize: 150px;
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 }
 </style>
