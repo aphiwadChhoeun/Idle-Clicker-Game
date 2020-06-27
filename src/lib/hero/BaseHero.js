@@ -19,8 +19,8 @@ export default class BaseHero {
     this.level = level
   }
 
-  upgradeLevel() {
-    this.level += 1
+  upgradeLevel(amount = 1) {
+    this.level += amount
     this.damage += Math.ceil(this.damage * 0.25)
   }
 

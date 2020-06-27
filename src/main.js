@@ -15,7 +15,7 @@ new Vue({
   store,
   render: h => h(App),
   created() {
-    const enemy = EnemyPool.getEnemy(0)
+    const enemy = EnemyPool.getEnemy(this.$store.state.stage)
     this.$store.dispatch('Enemy/spawn', enemy)
 
     playThemeMusic()
