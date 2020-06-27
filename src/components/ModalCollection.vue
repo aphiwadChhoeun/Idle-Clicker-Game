@@ -6,6 +6,7 @@
 
 <script>
 import BarracksShop from './modals/BarracksShop'
+import UpgradeShop from './modals/UpgradeShop'
 import SettingsModal from './modals/SettingsModal'
 import { mapState } from 'vuex'
 
@@ -14,6 +15,7 @@ export default {
 
   components: {
     BarracksShop,
+    UpgradeShop,
     SettingsModal
   },
 

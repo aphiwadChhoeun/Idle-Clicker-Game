@@ -2,8 +2,13 @@
   <div class="action__container">
     <div class="action__wrapper">
       <coin-pocket />
-      <barracks-icon />
-      <settings-icon />
+      <menu-item
+        v-for="item in menuItems"
+        :key="item.label"
+        :label="item.label"
+        :image="item.image"
+        :modal="item.modal"
+      />
     </div>
     <action-button />
   </div>
@@ -34,8 +39,7 @@
 <script>
 import ActionButton from './ActionButton'
 import CoinPocket from './CoinPocket'
-import BarracksIcon from '../menu/BarracksIcon'
-import SettingsIcon from '../menu/SettingsIcon'
+import MenuItem from './MenuItem'
 
 export default {
   name: 'ActionPanel',
@@ -43,8 +47,29 @@ export default {
   components: {
     ActionButton,
     CoinPocket,
-    BarracksIcon,
-    SettingsIcon
+    MenuItem
+  },
+
+  data() {
+    return {
+      menuItems: [
+        {
+          label: 'Barracks',
+          image: '/images/barracks.webp',
+          modal: 'BarracksShop'
+        },
+        {
+          label: 'Upgrade',
+          image: '/images/upgrade.webp',
+          modal: 'UpgradeShop'
+        },
+        {
+          label: 'Settings',
+          image: '/images/settings.webp',
+          modal: 'SettingsModal'
+        }
+      ]
+    }
   }
 }
 </script>

@@ -12,7 +12,7 @@ const store = new Vuex.Store({
   state: {
     halt: false,
     stage: 0,
-    coin: 100,
+    coin: 0,
     damage: 5
   },
   mutations: {

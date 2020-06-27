@@ -5,7 +5,7 @@
       <span class="value">{{ heroes.length }}/{{ limit }}</span>
     </div>
     <div class="stats">
-      <span class="label">DPS:</span>
+      <span class="label"><span class="mdi mdi-sword"></span>DPS:</span>
       <span class="value">{{ totalDps }}</span>
     </div>
   </div>
