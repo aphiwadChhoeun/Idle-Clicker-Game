@@ -1,16 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import EnemyPool from '../lib/enemy/EnemyPool'
 import EnemyStore from './modules/enemy'
 import ModalStore from './modules/modal'
 import HeroStore from './modules/hero'
 import SettingsStore from './modules/settings'
 
+import createPersistPlugin from './plugins/PersistPlugin'
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    halt: false,
     stage: 0,
     coin: 0,
     damage: 5
@@ -29,13 +31,30 @@ const store = new Vuex.Store({
   },
   actions: {
     attack({ commit, state }) {
-      if (state.Enemy.enemy.hp > 0) {
+      if (state.Enemy.enemy.hp >= 0) {
         commit('Enemy/damageRecieve', state.damage)
       }
     },
 
     heroAttack({ commit }, damage) {
       commit('Enemy/damageRecieve', damage)
+    },
+
+    initStore({ dispatch, state }) {
+      // Check if the ID exists
+      const stateData = localStorage.getItem('ClickerGame')
+      if (stateData) {
+        // Replace the state object with the stored item
+        store.replaceState(Object.assign(state, JSON.parse(stateData)))
+        dispatch('Enemy/buildEnemyObject')
+
+        if (state.Hero.heroes.length > 0) {
+          dispatch('Hero/buildHeroesObjects')
+        }
+      } else {
+        const enemy = EnemyPool.getEnemy(state.stage)
+        dispatch('Enemy/spawn', enemy)
+      }
     }
   },
   modules: {
@@ -43,7 +62,8 @@ const store = new Vuex.Store({
     Modal: ModalStore,
     Hero: HeroStore,
     Settings: SettingsStore
-  }
+  },
+  plugins: [createPersistPlugin()]
 })
 
 export default store

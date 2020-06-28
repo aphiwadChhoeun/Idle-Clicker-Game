@@ -8,6 +8,10 @@ export default class BaseEnemy {
     this.level = level
   }
 
+  setHp(hp) {
+    this.hp = hp
+  }
+
   upgradeLevel() {
     this.level += 1
     this.recalibrateHp()

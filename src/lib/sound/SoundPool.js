@@ -9,7 +9,10 @@ const themeMusic = new Howl({
   volume: 0.4
 })
 export const themeMusicSettings = themeMusic
-export const playThemeMusic = () => {
+export const playThemeMusic = (options = {}) => {
+  if (options.volume) {
+    themeMusic.volume(options.volume)
+  }
   themeMusic.play()
 }
 
