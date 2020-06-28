@@ -9,8 +9,6 @@
 .scene__container {
   display: block;
   padding: 4rem 0;
-  overflow-y: scroll;
-  max-height: 80vh;
 }
 </style>
 

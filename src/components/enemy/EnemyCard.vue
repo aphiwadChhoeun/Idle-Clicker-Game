@@ -116,12 +116,12 @@ export default {
 
 .enemy__card {
   position: relative;
-  width: 350px;
-  height: 550px;
+  width: 280px;
+  height: 450px;
   margin: 1rem auto;
   padding: 40px;
-  background: url('/images/card_bg.webp');
-  background-size: cover;
+  background: url('/images/card_bg.webp') no-repeat;
+  background-size: contain;
   overflow: hidden;
 
   .enemy__image {
@@ -136,7 +136,7 @@ export default {
   }
 
   .enemy__meta {
-    margin-top: 25px;
+    margin-top: 30px;
     font-family: $altFont;
     color: $dark;
     font-size: 1.5rem;

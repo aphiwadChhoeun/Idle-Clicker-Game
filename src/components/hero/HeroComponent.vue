@@ -47,7 +47,10 @@ export default {
 
   .heroes__container {
     margin-top: 1rem;
+    padding-right: 1rem;
     width: 100%;
+    max-height: 60vh;
+    overflow-y: scroll;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;

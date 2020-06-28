@@ -34,11 +34,11 @@ export default {
 
   .hero__container {
     padding: 0.5rem;
-    flex: 1;
+    flex: 2;
   }
 
   .enemy__container {
-    flex: 0;
+    flex: 1;
   }
 }
 </style>
