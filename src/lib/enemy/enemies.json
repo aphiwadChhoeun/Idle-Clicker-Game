@@ -22,7 +22,7 @@
       "name": "Crabasaur",
       "hp": 40,
       "image": "/images/crab.webp",
-      "bounty": 4
+      "bounty": 8
     },
     {
       "name": "Undead Skeleton",
@@ -34,7 +34,7 @@
       "name": "Spider King",
       "hp": 100,
       "image": "/images/spider_king.webp",
-      "bounty": 10
+      "bounty": 15
     }
   ]
 ]

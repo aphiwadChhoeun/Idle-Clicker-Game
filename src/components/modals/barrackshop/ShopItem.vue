@@ -9,7 +9,7 @@
     </div>
     <div class="shop__meta box__meta">
       <p>{{ name }}</p>
-      <p><span class="icon coin"></span> {{ cost }}</p>
+      <p><span class="icon coin"></span> {{ cost | numeral('0.[0]a') }}</p>
       <p><span class="mdi" :class="damageIcon"></span> {{ damage }}</p>
     </div>
   </div>

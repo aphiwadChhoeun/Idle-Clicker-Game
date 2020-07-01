@@ -25,11 +25,11 @@ export default class BaseEnemy {
   }
 
   recalibrateBounty() {
-    this.bounty += Math.ceil(this.level * this.bounty * 1.2)
+    this.bounty += Math.ceil(this.level * this.bounty * 1.33)
   }
 
   recalibrateHp() {
-    this.hp += Math.ceil(this.level * this.hp * 2.2)
+    this.hp += Math.ceil(this.level * this.hp * 2.5)
     this.maxHp = this.hp
   }
 }
