@@ -116,8 +116,8 @@ export default {
 
 .enemy__card {
   position: relative;
-  width: 280px;
-  height: 450px;
+  width: 350px;
+  height: 550px;
   margin: 1rem auto;
   padding: 40px;
   background: url('/images/card_bg.webp') no-repeat;

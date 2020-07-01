@@ -89,10 +89,9 @@ export default {
 }
 .shop__container {
   width: 100%;
-  display: grid;
   margin-top: 0.5rem;
-  grid-template-columns: repeat(8, 1fr);
+  display: flex;
   justify-items: center;
-  grid-gap: 0.5rem;
+  flex-wrap: wrap;
 }
 </style>

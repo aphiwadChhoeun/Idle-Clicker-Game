@@ -67,9 +67,14 @@ export default {
 .shop__item {
   width: 128px;
   padding: 10px;
-  margin: 0;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
   cursor: pointer;
   overflow: hidden;
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   &:hover {
     filter: contrast(1.5);
