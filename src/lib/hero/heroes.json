@@ -19,6 +19,15 @@
   },
   {
     "id": "h1003",
+    "name": "Borus",
+    "avatar": "/images/knight_avatar.webp",
+    "image": "/images/knight.webp",
+    "cost": 100,
+    "damage": 18,
+    "damageType": "normal"
+  },
+  {
+    "id": "h1004",
     "name": "Elyn",
     "avatar": "/images/mage_avatar.webp",
     "image": "/images/mage.webp",
@@ -27,7 +36,7 @@
     "damageType": "normal"
   },
   {
-    "id": "h1004",
+    "id": "h1005",
     "name": "Thulrak",
     "avatar": "/images/dwarf_avatar.webp",
     "image": "/images/dwarf.webp",
@@ -36,7 +45,7 @@
     "damageType": "normal"
   },
   {
-    "id": "h1005",
+    "id": "h1006",
     "name": "Merisa",
     "avatar": "/images/bow_avatar.webp",
     "image": "/images/bow.webp",
@@ -45,12 +54,30 @@
     "damageType": "normal"
   },
   {
-    "id": "h1006",
+    "id": "h1007",
     "name": "Ulfu",
     "avatar": "/images/rogue_avatar.webp",
     "image": "/images/rogue.webp",
     "cost": 1500,
     "damage": 100,
+    "damageType": "normal"
+  },
+  {
+    "id": "h1008",
+    "name": "Barion",
+    "avatar": "/images/gladiator_avatar.webp",
+    "image": "/images/gladiator.webp",
+    "cost": 2400,
+    "damage": 250,
+    "damageType": "normal"
+  },
+  {
+    "id": "h1009",
+    "name": "Deshik",
+    "avatar": "/images/wizard_avatar.webp",
+    "image": "/images/wizard.webp",
+    "cost": 3000,
+    "damage": 270,
     "damageType": "normal"
   }
 ]
