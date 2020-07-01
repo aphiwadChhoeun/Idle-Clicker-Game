@@ -6,7 +6,7 @@
     </div>
     <div class="stats">
       <span class="label"><span class="mdi mdi-sword"></span>DPS:</span>
-      <span class="value">{{ totalDps }}</span>
+      <span class="value">{{ totalDps | numeral('0.[0]a') }}</span>
     </div>
   </div>
 </template>

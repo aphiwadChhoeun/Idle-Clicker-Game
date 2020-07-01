@@ -3,7 +3,7 @@
     <template v-slot:header>Barracks</template>
     <template v-slot:body>
       <div class="shop__inventory">
-        <div class="current__coin">{{ coin }}</div>
+        <div class="current__coin">{{ coin | numeral('0.[0]a') }}</div>
       </div>
       <div class="shop__container">
         <shop-item
